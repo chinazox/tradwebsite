@@ -150,7 +150,7 @@ input[readonly]{opacity:.9;cursor:default}
 <p>If you would like to stay nearby, we have arranged accommodation options for guests. Please let us know whether you require accommodation so we can secure your place.</p>
 <p>Accommodation is subject to availability and a deposit is required to secure each place.</p>
 </div>
-<div class="actions"><button class="btn" data-go="secure">Secure Accommodation</button><button class="text-link" data-go="thank-you">No accommodation needed →</button></div>
+<div class="actions"><button class="btn" data-go="deposit">Secure Accommodation</button><button class="text-link" data-go="thank-you">No accommodation needed →</button></div>
 </div>
 <nav class="footer-nav"><button class="text-link" data-go="rsvp">← Back to RSVP</button><button class="text-link" data-go="home">Home</button></nav>
 </section>
@@ -247,7 +247,7 @@ document.querySelector("#rsvpForm").addEventListener("submit",async e=>{
  if(!ok){alert("We couldn't record your RSVP. Please try again.");return}
  if(val==="Yes") {
    document.querySelector("#guestName").value=name;
-   show("accommodation");
+   show("secure");
  } else show("not-attending");
 });
 
@@ -265,7 +265,7 @@ document.querySelector("#accommodationForm").addEventListener("submit",async e=>
  if(!val){alert("Please select an accommodation option.");return}
  const ok=await submitNetlifyForm(form);
  if(!ok){alert("We couldn't record your accommodation response. Please try again.");return}
- if(val==="Yes") show("deposit"); else show("thank-you");
+ if(val==="Yes") show("accommodation"); else show("thank-you");
 });
 
 // Restore the carried-over name if the visitor returns to this step.
