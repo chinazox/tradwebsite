@@ -1,0 +1,1 @@
+Restored visual version of the Chinazo & Chiebuka traditional wedding site. The original design is preserved; the accommodation step now carries the RSVP name forward automatically using sessionStorage and submits that name with the accommodation response.
