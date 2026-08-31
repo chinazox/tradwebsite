@@ -57,7 +57,7 @@ h2{font-size:clamp(30px,4vw,48px)}
 .sub{font-size:clamp(19px,2vw,27px);margin-top:16px}
 .info-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin:38px 0}
 .info-card{background:rgba(255,250,241,.6);border:1px solid rgba(107,50,28,.18);padding:28px;text-align:center}
-.info-card strong{display:block;font-size:clamp(22px,2.5vw,32px)}
+.info-card strong{display:block;font-size:clamp(22px,2.5vw,32px);margin-top:2px}
 .info-card span{font-size:20px}
 .body-copy{font-size:22px;line-height:1.5;text-align:center;max-width:800px;margin:25px auto}
 .actions{display:flex;justify-content:center;gap:20px;flex-wrap:wrap;margin-top:28px}
@@ -126,7 +126,7 @@ input[readonly]{opacity:.9;cursor:default}
 <div class="info-card"><span>Ceremony Start Time</span><strong>1:00 PM</strong></div>
 <div class="info-card"><span>Dress Code</span><strong>Traditional Attire</strong></div>
 </div>
-<p class="body-copy">We cordially invite you to celebrate the Traditional Marriage of Chinazo Onwuta and Chiebuka Itanyi.</p>
+<p class="body-copy">We cordially invite you to join us in celebrating the traditional marriage of Chinazo Onwuta and Chiebuka Itanyi. We would be delighted to have you with us as we come together with our families and loved ones to celebrate this special occasion.</p>
 
 <div class="actions"><button class="btn" data-go="rsvp">RSVP</button></div>
 </div>
@@ -135,7 +135,7 @@ input[readonly]{opacity:.9;cursor:default}
 
 <section id="rsvp" class="page section">
 <div class="form-wrap">
-<header class="header"><h1>RSVP</h1><div class="sub">The traditional wedding of Chinazo &amp; Chiebuka</div></header>
+<header class="header"><h1>RSVP</h1><div class="sub">The traditional wedding of Chinazo &amp; Chiebuka.</div></header>
 <form class="form-card" name="traditional-rsvp" method="POST" data-netlify="true" data-netlify-honeypot="bot-field" id="rsvpForm">
 <input type="hidden" name="form-name" value="traditional-rsvp">
 <p style="display:none"><label>Don't fill this out <input name="bot-field"></label></p>
@@ -144,7 +144,7 @@ input[readonly]{opacity:.9;cursor:default}
 <div class="choice"><button type="button" data-choice="attending" data-value="Yes">Yes</button><button type="button" data-choice="attending" data-value="No">No</button></div>
 <input type="hidden" name="attending" id="attending" required></div>
 <div class="actions"><button class="btn" type="submit">Submit</button></div>
-<div class="helper">Your response will be recorded securely with the site form.</div>
+<div class="helper">Your response will be recorded securely.</div>
 </form>
 </div>
 <nav class="footer-nav"><button class="text-link" data-go="info">← Back to info</button><button class="text-link" data-go="home">Home</button></nav>
@@ -152,7 +152,7 @@ input[readonly]{opacity:.9;cursor:default}
 
 <section id="not-attending" class="page section thanks">
 <div class="container">
-<h1>We’re sorry that you can’t make it</h1>
+<h1>We’re sorry that you can’t make it.</h1>
 <p class="body-copy">Thank you for letting us know. We completely understand, and we are grateful that you took the time to RSVP.</p>
 <div class="actions"><button class="btn" data-go="thank-you">Continue</button></div>
 </div>
@@ -163,9 +163,13 @@ input[readonly]{opacity:.9;cursor:default}
 <div class="container">
 <header class="header"><h1>Accommodation Information</h1></header>
 <div class="body-copy" style="text-align:left;max-width:850px">
-<p><strong>Why not stay with us.</strong></p>
-<p>If you would like to stay nearby, we have arranged accommodation options for guests. Please let us know whether you require accommodation so we can secure your place.</p>
-<p>Accommodation is subject to availability and a deposit is required to secure each place.</p>
+<p>For those who wish to stay on site for the wedding, a number of rooms have been reserved for family and guests. If you would like accommodation, please let us know and we will add your name to the list.</p>
+<p>Rooms are limited and will be allocated on a first-come, first-served basis.</p>
+<p><strong>Standard Double Rooms</strong></p>
+<p><strong>£175 per person</strong></p>
+<p class="small-note">(For a two night stay, breakfast included).</p>
+<p><strong>Additional Accommodation</strong></p>
+<p>Alternatively, additional accommodation is available at the adjacent hotel. Bookings for these rooms will be handled separately.</p>
 </div>
 <div class="actions"><button class="btn" data-go="deposit">Secure Your Space</button><button class="text-link" data-go="thank-you">No accommodation needed →</button></div>
 </div>
@@ -174,7 +178,7 @@ input[readonly]{opacity:.9;cursor:default}
 
 <section id="secure" class="page section">
 <div class="form-wrap">
-<header class="header"><h1>Accommodation</h1><div class="sub">Please let us know your choice below.</div></header>
+<header class="header"><h1>Accommodation</h1><div class="sub">Please let us know if you require accommodation for the wedding.</div></header>
 <form class="form-card" name="traditional-accommodation" method="POST" data-netlify="true" id="accommodationForm">
 <input type="hidden" name="form-name" value="traditional-accommodation">
 <div class="field">
@@ -194,11 +198,11 @@ input[readonly]{opacity:.9;cursor:default}
 <header class="header"><h1>Pay Deposit</h1></header>
 <div class="payment-box">
 <div class="amount">£75</div>
-<p class="body-copy">per person staying</p>
-<p class="bank">To secure your accommodation, please pay the £75 deposit (per guest) to the account below:</p>
-<p class="bank"><strong> Sort code: 60-83-71 Account no: 40029933</strong></p>
-<p class="small-note">Alternatively, you can use this payment link.</p>
-<a class="btn" href="https://www.starlingbank.com/" target="_blank" rel="noopener">Payment Link</a>
+<p class="small-note">Per person staying</p>
+<p class="bank">To secure your accommodation, please pay the deposit (per guest) to the account below:</p>
+<p class="bank"><strong>Sort code: 60-83-71</strong></p><p class="bank"><strong>Account no: 40029933</strong></p><p class="small-note">(Reference: Accommodation)</p>
+<p class="bank">Alternatively, you can use this payment link.</p>
+<a class="btn" href="https://settleup.starlingbank.com/chinazo-onwuta-db4be6?amount=75.00" target="_blank" rel="noopener">Payment Link</a>
 </div>
 <div class="actions"><button class="btn outline" data-go="thank-you">Finish</button></div>
 </div>
@@ -207,8 +211,10 @@ input[readonly]{opacity:.9;cursor:default}
 
 <section id="thank-you" class="page section thanks">
 <div class="container">
-<h1>Thank You</h1>
-<p class="body-copy">Thank you for taking the time to respond. Why not check out our gift registry in the meantime?</p>
+<h1>Thank You.</h1>
+<p class="small-note">We appreciate you taking the time to respond.</p>
+<p class="body-copy">Why not check out our gift registry in the meantime?</p>
+<a class="btn" href="https://www.amazon.co.uk/wedding/share/theitanyis" target="_blank" rel="noopener">Amazon Gift Registry</a>
 <div class="actions"><button class="text-link" data-go="home">← Back to home</button></div>
 </div>
 </section>
