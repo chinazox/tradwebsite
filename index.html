@@ -38,7 +38,7 @@ button{cursor:pointer}
 .decor.flower5{
     width: 350px;
     left: -60px;
-    top: 390px;
+    top: 470px;
 }
 
 .decor.flower6{
@@ -76,9 +76,10 @@ input[readonly]{opacity:.9;cursor:default}
 .footer-nav .right{display:flex;gap:20px;align-items:center}
 .payment{background:var(--gold);text-align:center}
 .payment .container{display:flex;flex-direction:column;justify-content:center;flex:1}
-.payment-box{max-width:780px;margin:30px auto;background:rgba(255,250,241,.25);padding:32px}
+.payment-box{max-width:780px;margin:30px auto;background:rgba(255,250,241,.25);padding:0px 32px 32px}
 .amount{font-size:clamp(50px,7vw,80px);font-weight:600}
 .bank{font-size:22px;line-height:1.6}
+.bank2{font-size:17px;line-height:1.6}
 .small-note{font-size:17px}
 .thanks{text-align:center;justify-content:center;overflow:hidden}
 .thanks .container{position:relative;z-index:2}
@@ -91,6 +92,36 @@ input[readonly]{opacity:.9;cursor:default}
  .body-copy{font-size:19px}
  .footer-nav{font-size:16px}
  .decor.tl,.decor.br,.decor.tr,.decor.bl{width:190px}
+}
+@media (max-width: 600px) {
+    #info .header h1 {font-size: 40px;}
+    #info .header h2 {font-size: 24px;}
+    #info .header .sub {font-size: 18px;}
+    #info .flower5 {
+    width: 180px; 
+    transform: translate(0px, 220px);
+    }
+    #info .flower6 {width: 200px;}
+
+    #home .decor.tl {
+    width: 200px; 
+    transform: translate(0px, 100px);
+    }
+     #home .decor.tr {
+    width: 200px; 
+    transform: translate(0px, 120px);
+    }
+     #home .decor.bl {
+    width: 240px; 
+    transform: translate(-20px, 30px);
+    }
+    #home .decor.br {
+    width: 280px; 
+    transform: translate(70px, -15px);
+    }
+}
+.accommodation-details {
+    text-align: center;
 }
 </style>
 </head>
@@ -120,13 +151,18 @@ input[readonly]{opacity:.9;cursor:default}
 <img class="decor flower5" src="assets/flower5.png" alt="">
 <img class="decor flower6" src="assets/flower6.png" alt="">
 <div class="container">
-<header class="header"><h1>Great Blunts House,<br>Stock Brook Manor Golf Club</h1><div class="sub">Queens Park Ave, Billericay CM12 0SP</div></header>
+<header class="header">
+    <h1>Great Blunts House</h1>
+    <h2>(Stock Brook Manor Golf Club)</h2>
+    <div class="sub"><strong>Queens Park Ave, Billericay CM12 0SP</strong></div>
+</header>
 <div class="info-grid">
 <div class="info-card"><span>Date</span><strong>Monday, March 29, 2027</strong></div>
 <div class="info-card"><span>Ceremony Start Time</span><strong>1:00 PM</strong></div>
 <div class="info-card"><span>Dress Code</span><strong>Traditional Attire</strong></div>
 </div>
-<p class="body-copy">We cordially invite you to join us in celebrating the traditional marriage of Chinazo Onwuta and Chiebuka Itanyi. We would be delighted to have you with us as we come together with our families and loved ones to celebrate this special occasion.</p>
+<p class="body-copy">We cordially invite you to join us in celebrating the traditional marriage of Chinazo Onwuta and Chiebuka Itanyi.</p>
+<p class="body-copy">We would be delighted to have you with us as we come together with our families and loved ones to celebrate this special occasion.</p>
 
 <div class="actions"><button class="btn" data-go="rsvp">RSVP</button></div>
 </div>
@@ -135,7 +171,7 @@ input[readonly]{opacity:.9;cursor:default}
 
 <section id="rsvp" class="page section">
 <div class="form-wrap">
-<header class="header"><h1>RSVP</h1><div class="sub">The traditional wedding of Chinazo &amp; Chiebuka.</div></header>
+<header class="header"><h1>RSVP</h1><div class="sub">For the traditional wedding of Chinazo &amp; Chiebuka.</div></header>
 <form class="form-card" name="traditional-rsvp" method="POST" data-netlify="true" data-netlify-honeypot="bot-field" id="rsvpForm">
 <input type="hidden" name="form-name" value="traditional-rsvp">
 <p style="display:none"><label>Don't fill this out <input name="bot-field"></label></p>
@@ -165,12 +201,15 @@ input[readonly]{opacity:.9;cursor:default}
 <div class="body-copy" style="text-align:left;max-width:850px">
 <p>For those who wish to stay on site for the wedding, a number of rooms have been reserved for family and guests. If you would like accommodation, please let us know and we will add your name to the list.</p>
 <p>Rooms are limited and will be allocated on a first-come, first-served basis.</p>
-<p><strong>Standard Double Rooms</strong></p>
-<p><strong>£175 per person</strong></p>
-<p class="small-note">(For a two night stay, breakfast included).</p>
-<p><strong>Additional Accommodation</strong></p>
-<p>Alternatively, additional accommodation is available at the adjacent hotel. Bookings for these rooms will be handled separately.</p>
+<div class="accommodation-details">
+    <p><strong>Standard Double Rooms</strong></p>
+    <header class="header"><h2>£175</h2>per person</header>
+   <p class="small-note">(For a two night stay, breakfast included).</p>
 </div>
+<br>
+<p class="small-note">Alternatively, additional accommodation is available at the adjacent hotel. Bookings for these rooms will be handled separately.</p>
+</div>
+<br>
 <div class="actions"><button class="btn" data-go="deposit">Secure Your Space</button><button class="text-link" data-go="thank-you">No accommodation needed →</button></div>
 </div>
 <nav class="footer-nav"><button class="text-link" data-go="secure">← Back</button><button class="text-link" data-go="home">Home</button></nav>
@@ -185,9 +224,9 @@ input[readonly]{opacity:.9;cursor:default}
 <label>Your RSVP name</label>
 <input id="guestName" name="guest_name" type="text" readonly>
 </div>
-<div class="field"><label>Will you be needing accommodation?*</label><div class="choice"><button type="button" data-choice="accommodation" data-value="Yes">Yes, I would like accommodation</button><button type="button" data-choice="accommodation" data-value="No">No thank you</button></div><input type="hidden" name="accommodation" id="accommodation" required></div>
+<div class="field"><label>Will you need accommodation?*</label><div class="choice"><button type="button" data-choice="accommodation" data-value="Yes">Yes, I would like accommodation</button><button type="button" data-choice="accommodation" data-value="No">No thank you</button></div><input type="hidden" name="accommodation" id="accommodation" required></div>
 <div class="actions"><button class="btn" type="submit">Submit Response</button></div>
-<div class="helper">Your name has been carried over from your RSVP.</div>
+<div class="helper">Your response will be recorded securely.</div>
 </form>
 </div>
 <nav class="footer-nav"><button class="text-link" data-go="rsvp">← Back to RSVP</button><button class="text-link" data-go="rsvp">Home</button></nav>
@@ -198,12 +237,14 @@ input[readonly]{opacity:.9;cursor:default}
 <header class="header"><h1>Pay Deposit</h1></header>
 <div class="payment-box">
 <div class="amount">£75</div>
-<p class="small-note">Per person staying</p>
-<p class="bank">To secure your accommodation, please pay the deposit (per guest) to the account below:</p>
-<p class="bank"><strong>Sort code: 60-83-71</strong></p><p class="bank"><strong>Account no: 40029933</strong></p><p class="small-note">(Reference: Accommodation)</p>
-<p class="bank">Alternatively, you can use this payment link.</p>
+<p class="bank2">Per person staying</p>
+<p class="bank">To secure your accommodation, please pay the deposit to the account below:</p>
+<p class="bank"><strong>Chinazo Onwuta<br>Sort code: 60-83-71<br>Account no: 40029933</strong></p>
+<p class="bank2">Alternatively, you can use this payment link.</p>
+<br>
 <a class="btn" href="https://settleup.starlingbank.com/chinazo-onwuta-db4be6?amount=75.00" target="_blank" rel="noopener">Payment Link</a>
 </div>
+<p class="bank2">Information on when to make payment for the outstanding balance will be sent to you.</p>
 <div class="actions"><button class="btn outline" data-go="thank-you">Finish</button></div>
 </div>
 <nav class="footer-nav"><button class="text-link" data-go="accommodation">← Back</button><button class="text-link" data-go="home">Home</button></nav>
@@ -212,9 +253,11 @@ input[readonly]{opacity:.9;cursor:default}
 <section id="thank-you" class="page section thanks">
 <div class="container">
 <h1>Thank You.</h1>
-<p class="small-note">We appreciate you taking the time to respond.</p>
-<p class="body-copy">Why not check out our gift registry in the meantime?</p>
-<a class="btn" href="https://www.amazon.co.uk/wedding/share/theitanyis" target="_blank" rel="noopener">Amazon Gift Registry</a>
+
+<br>
+<p class="body-copy">Why not check out our gift registry in the meantime?</p><br>
+<a class="btn" href="https://withjoy.com/chinazo-and-chiebuka/registry?utm_medium=web&utm_source=joy&utm_campaign=share_website_dialog" target="_blank" rel="noopener">Gift Registry</a>
+<br><br>
 <div class="actions"><button class="text-link" data-go="home">← Back to home</button></div>
 </div>
 </section>
