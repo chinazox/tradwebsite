@@ -256,7 +256,7 @@ input[readonly]{opacity:.9;cursor:default}
 <nav class="footer-nav"><button class="text-link" data-go="rsvp">← Back to RSVP</button><button class="text-link" data-go="home">Home</button></nav>
 </section>
 
-<section id="accommodation" class="page section">
+<section id="accommodationinfo" class="page section">
 <div class="container">
 <header class="header"><h1>Accommodation Information</h1></header>
 <div class="body-copy" style="text-align:left;max-width:850px">
@@ -329,7 +329,7 @@ input[readonly]{opacity:.9;cursor:default}
 <p class="bank2">Information on when to make payment for the outstanding balance will be sent to you.</p>
 <div class="actions"><button class="btn outline" data-go="thank-you">Finish</button></div>
 </div>
-<nav class="footer-nav"><button class="text-link" data-go="accommodation">← Back</button><button class="text-link" data-go="home">Home</button></nav>
+<nav class="footer-nav"><button class="text-link" data-go="accommodationinfo">← Back</button><button class="text-link" data-go="home">Home</button></nav>
 </section>
 
 <section id="thank-you" class="page section thanks">
@@ -348,7 +348,7 @@ input[readonly]{opacity:.9;cursor:default}
 </div>
 
 <script>
-const pages = ["home","info","rsvp","not-attending","accommodation","secure","deposit","thank-you"];
+const pages = ["home","info","rsvp","not-attending","accommodationinfo","secure","deposit","thank-you"];
 const route = {
  home:["info"], info:["rsvp"], rsvp:["accommodation","not-attending"],
  "not-attending":["thank-you"], accommodation:["secure","thank-you"],
@@ -415,7 +415,7 @@ document.querySelector("#accommodationForm").addEventListener("submit",async e=>
  if(!val){alert("Please select an accommodation option.");return}
  const ok=await submitNetlifyForm(form);
  if(!ok){alert("We couldn't record your accommodation response. Please try again.");return}
- if(val==="Yes") show("accommodation"); else show("thank-you");
+ if(val==="Yes") show("accommodationinfo"); else show("thank-you");
 });
 
 // Restore the carried-over name if the visitor returns to this step.
