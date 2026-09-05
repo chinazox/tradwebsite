@@ -422,10 +422,23 @@ document.querySelector("#accommodationForm").addEventListener("submit",async e=>
 const savedRsvpName=sessionStorage.getItem("rsvpName");
 if(savedRsvpName) document.querySelector("#guestName").value=savedRsvpName;
 
-// Prevent direct deep-linking into a step: only home is the entry point.
-const requested=location.hash.replace("#","");
-history.replaceState({page:"home"},"","#home");
-show("home",false);
+// Allow direct links only to the selected public pages.
+const path = location.pathname.replace(/\/+$/, "") || "/";
+const publicPages = {
+  "/enter": "home",
+  "/rsvp": "rsvp",
+  "/accommodation": "accommodationinfo",
+  "/secureyourspace": "deposit"
+};
+
+const requested = publicPages[path];
+
+if (requested) {
+  show(requested, false);
+} else {
+  show("home", false);
+}
+
 </script>
 </body>
 </html>
